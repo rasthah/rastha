@@ -40,13 +40,18 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required',
+            'tanggal' => 'required',
             'description' => 'required',
+            'file_pendukung' => 'required',
         ]);
   
         Blog::create($request->all());
    
         return redirect()->route('blogs.index')
-                        ->with('success','Blog created successfully.');
+                        ->with('success','Keluhan berhasil ditambah');
     }
    
     /**
@@ -82,7 +87,12 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+            'email' => 'required',
+            'tanggal' => 'required',
             'description' => 'required',
+            'file_pendukung' => 'required',
         ]);
   
         $blog->update($request->all());

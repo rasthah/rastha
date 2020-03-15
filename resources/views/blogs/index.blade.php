@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Check all Blogs</h2>
+                <h2>Semua Keluhan</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('blogs.create') }}"> +Create blogs</a>
+                <a class="btn btn-success" href="{{ route('blogs.create') }}"> Buat Keluhan</a>
             </div>
         </div>
     </div>
@@ -21,15 +21,25 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Title</th>
-            <th>Description</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Nomor Telp/Hp</th>
+            <th>Email</th>
+            <th>Tanggal</th>
+            <th>Keluhan</th>
+            <th>File Pendukung</th>
             <th width="250px">Action</th>
         </tr>
         @foreach ($blogs as $blog)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $blog->title }}</td>
+            <td>{{ $blog->alamat }}</td>
+            <td>{{ $blog->no_hp }}</td>
+            <td>{{ $blog->email }}</td>
+            <td>{{ $blog->tanggal }}</td>
             <td>{{ $blog->description }}</td>
+            <td>{{ $blog->file_pendukung }}</td>
             <td>
                 <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
    

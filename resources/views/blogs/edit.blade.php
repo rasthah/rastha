@@ -28,18 +28,57 @@
         @method('PUT')
    
          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Title:</strong>
-                    <input type="text" name="title" value="{{ $blog->title }}" class="form-control" placeholder="Title">
-                </div>
+         <div class="col-xs-12 col-sm-12 col-md-12">
+         <div class="form-group">
+                <strong>Nama Pelanggan</strong>
+                <input type="text" name="title" class="form-control" placeholder="Masukkan Nama">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $blog->description }}</textarea>
-                </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Alamat</strong>
+                <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat">
             </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nomor Telp/HP</strong>
+                <input type="text" name="no_hp" class="form-control" placeholder="Masukkan Nomor">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Email</strong>
+                <input type="text" name="email" class="form-control" placeholder="Masukkan Email">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal</strong>
+                <input type="input-group date" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Deskripsi Keluhan</strong>
+                <textarea class="form-control" style="height:280px" name="description" placeholder="Masukkan Keluhan"></textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>File Pendukung</strong>
+                <input type="text" name="file_pendukung" class="form-control" placeholder="File Pendukung">
+            </div>
+        </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
