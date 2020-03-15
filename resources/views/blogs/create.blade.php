@@ -56,8 +56,8 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tanggal</strong>
-                <input type="text" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
+                <label>Tanggal</label>
+                <input type="date" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
                     
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>File Pendukung</strong>
-                <input type="text" name="file_pendukung" class="form-control" placeholder="File Pendukung">
+                <input type="file" name="file_pendukung" class="form-control" placeholder="File Pendukung">
             </div>
         </div>
 

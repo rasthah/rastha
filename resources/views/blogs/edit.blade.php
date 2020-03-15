@@ -59,7 +59,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal</strong>
-                <input type="input-group date" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
+                <input type="date" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -76,7 +76,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>File Pendukung</strong>
-                <input type="text" name="file_pendukung" class="form-control" placeholder="File Pendukung">
+                <input type="file" name="file_pendukung" class="form-control" placeholder="File Pendukung">
             </div>
         </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
