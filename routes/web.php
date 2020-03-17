@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('blogs','BlogController');
+
+Route::resource('sendcomplaints','SendComplaintController');
