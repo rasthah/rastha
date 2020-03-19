@@ -25,4 +25,6 @@ Route::resource('blogs','BlogController');
 
 Route::resource('sendcomplaints','SendComplaintController');
 
-Route::resource('bagian', 'bagianController');
+Route::resource('bagian', 'BagianController');
+
+Route::resource('atasan', 'AtasanController');

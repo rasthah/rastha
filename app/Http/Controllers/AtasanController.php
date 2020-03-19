@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\SendComplaint;
-
 use App\Blog;
 
-class BagianController extends Controller
+class AtasanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +18,7 @@ class BagianController extends Controller
         $blogs = Blog::latest()->paginate(5);
         //$complaints = SendComplaint::latest()->paginate(5);
   
-        return view('bagian.index',compact('blogs'))
+        return view('atasan.index',compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +29,7 @@ class BagianController extends Controller
      */
     public function create()
     {
-        return view('bagian.create');
+        return view('atasan.create');
     }
 
     /**
@@ -46,12 +44,12 @@ class BagianController extends Controller
         $request->validate([
             
             'penanggung_jawab' => 'required',
-            'mengerjakan_keluhan' => 'required',
-            'petugas_respon' => 'required',
-            'respon' => 'required',
+            'atasan_id' => 'required',
+            //'petugas_respon' => 'required',
+            //'respon' => 'required',
             'tanggal_respon' => 'required',
             'waktu_penanganan' => 'required',
-            'tipe_keluhan' => 'required',
+            //'tipe_keluhan' => 'required',
         ]);
 
         $id = $request->blog_id;
@@ -61,7 +59,7 @@ class BagianController extends Controller
         $complaint->update($request->except(['blog_id']));
 
    
-        return redirect()->route('bagian.index')
+        return redirect()->route('atasan.index')
                         ->with('success','Keluhan berhasil dikirim');
     }
 
@@ -74,7 +72,7 @@ class BagianController extends Controller
     public function show($id)
     {
         $blog = Blog::find($id);
-        return view('bagian.show',compact('blog'));
+        return view('atasan.show',compact('blog'));
     }
 
     /**
@@ -87,7 +85,7 @@ class BagianController extends Controller
     {
         //$complaint = SendComplaint::find($id);
         $blog = Blog::find($id);
-        return view('bagian.edit',compact('blog'));
+        return view('atasan.edit',compact('blog'));
     }
 
     /**
@@ -101,19 +99,19 @@ class BagianController extends Controller
     {
         $request->validate([
             'penanggung_jawab' => 'required',
-            'mengerjakan_keluhan' => 'required',
-            'petugas_respon' => 'required',
-            'respon' => 'required',
+            'atasan_id' => 'required',
+            //'petugas_respon' => 'required',
+            //'respon' => 'required',
             'tanggal_respon' => 'required',
             'waktu_penanganan' => 'required',
-            'tipe_keluhan' => 'required',
+            //'tipe_keluhan' => 'required',
         ]);
 
         $complaint = Blog::find($id);
   
         $complaint->update($request->all());
   
-        return redirect()->route('bagian.index')
+        return redirect()->route('atasan.index')
                         ->with('success','Keluhan updated successfully');
     }
 
