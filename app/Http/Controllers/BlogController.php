@@ -47,6 +47,8 @@ class BlogController extends Controller
             'description' => 'required',
             'file_pendukung' => 'required',
         ]);
+
+        $file = $request->file('file_pendukung')->store('upload');
   
         Blog::create($request->all());
    
