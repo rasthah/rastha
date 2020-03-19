@@ -3,10 +3,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Kirim Keluhan </h2>
+                <h2> Terima Keluhan </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('sendcomplaints.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('bagian.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
         </div>
         <div class="form-group">
             <strong>Keterangan tambahan:</strong>
-            <textarea name="keterangan" id="" cols="30" rows="10"></textarea>
+            {{ $blog->keterangan }}
                 
         </div>
         <div class="form-group">

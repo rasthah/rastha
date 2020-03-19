@@ -7,7 +7,7 @@
                 <h2>Edit Kirim Keluhan</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('sendcomplaints.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('bagian.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -94,6 +94,7 @@
                     <option value="2">Petugas 2</option>                    
                 </select> 
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

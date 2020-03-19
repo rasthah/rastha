@@ -8,7 +8,7 @@ use App\SendComplaint;
 
 use App\Blog;
 
-class SendComplaintController extends Controller
+class bagianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class SendComplaintController extends Controller
         $blogs = Blog::latest()->paginate(5);
         //$complaints = SendComplaint::latest()->paginate(5);
   
-        return view('sendcomplaints.index',compact('blogs'))
+        return view('bagian.index',compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +31,7 @@ class SendComplaintController extends Controller
      */
     public function create()
     {
-        return view('sendcomplaints.create');
+        return view('bagian.create');
     }
 
     /**
@@ -45,10 +45,13 @@ class SendComplaintController extends Controller
 
         $request->validate([
             
-            'petugas_id' => 'required',
-            'departemen_id' => 'required',
-            'tanggal' => 'required',
-            'bagian_id' => 'required',
+            'penanggung_jawab' => 'required',
+            'mengerjakan_keluhan' => 'required',
+            'petugas_respon' => 'required',
+            'respon' => 'required',
+            'tanggal_respon' => 'required',
+            'waktu_penanganan' => 'required',
+            'tipe_keluhan' => 'required',
         ]);
 
         $id = $request->blog_id;
@@ -58,7 +61,7 @@ class SendComplaintController extends Controller
         $complaint->update($request->except(['blog_id']));
 
    
-        return redirect()->route('sendcomplaints.index')
+        return redirect()->route('bagian.index')
                         ->with('success','Keluhan berhasil dikirim');
     }
 
@@ -71,7 +74,7 @@ class SendComplaintController extends Controller
     public function show($id)
     {
         $blog = Blog::find($id);
-        return view('sendcomplaints.show',compact('blog'));
+        return view('bagian.show',compact('blog'));
     }
 
     /**
@@ -84,7 +87,7 @@ class SendComplaintController extends Controller
     {
         //$complaint = SendComplaint::find($id);
         $blog = Blog::find($id);
-        return view('sendcomplaints.edit',compact('blog'));
+        return view('bagian.edit',compact('blog'));
     }
 
     /**
@@ -97,17 +100,20 @@ class SendComplaintController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'petugas_id' => 'required',
-            'departemen_id' => 'required',
-            'tanggal_kirim' => 'required',
-            'bagian_id' => 'required',
+            'penanggung_jawab' => 'required',
+            'mengerjakan_keluhan' => 'required',
+            'petugas_respon' => 'required',
+            'respon' => 'required',
+            'tanggal_respon' => 'required',
+            'waktu_penanganan' => 'required',
+            'tipe_keluhan' => 'required',
         ]);
 
         $complaint = Blog::find($id);
   
         $complaint->update($request->all());
   
-        return redirect()->route('sendcomplaints.index')
+        return redirect()->route('bagian.index')
                         ->with('success','Keluhan updated successfully');
     }
 

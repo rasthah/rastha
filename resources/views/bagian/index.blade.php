@@ -44,11 +44,11 @@
             <td>{{ $blog->keterangan }}</td>
             <td>{{ $blog->file_pendukung }}</td>
             <td>
-                <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
+                <form action="{{ route('bagian.destroy',$blog->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('sendcomplaints.show',$blog->id) }}">Kirim</a>
+                    <a class="btn btn-info" href="{{ route('bagian.show',$blog->id) }}">Kirim</a>
 
-                    <a class="btn btn-success" href="{{ route('sendcomplaints.edit',$blog->id) }}">Edit</a>
+                    <a class="btn btn-success" href="{{ route('bagian.edit',$blog->id) }}">Edit</a>
                 </form>
             </td>
         </tr>

@@ -1,35 +1,33 @@
-@extends('blogs.layout')
-   
+@extends('sendcomplaints.layout')
+  
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Keluhan</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Kembali</a>
-            </div>
+<div class="row">
+    <div class="col-lg-12 margin-tb">
+        <div class="pull-left">
+            <h2>Buat Keluhan</h2>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-primary" href="{{ route('sendcomplaints.index') }}"> Kembali</a>
         </div>
     </div>
+</div>
    
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Warning!</strong> Please check input field code<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-  
-    <form action="{{ route('blogs.update',$blog->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Warning!</strong> Please check your input code<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
    
-         <div class="row">
-         <div class="col-xs-12 col-sm-12 col-md-12">
-         <div class="form-group">
+<form action="{{ route('sendcomplaints.store') }}" method="POST">
+    @csrf
+     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Nama Pelanggan</strong>
                 <input type="text" name="title" class="form-control" placeholder="Masukkan Nama">
             </div>
@@ -58,11 +56,9 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tanggal</strong>
+                <label>Tanggal</label>
                 <input type="date" name="tanggal" class="form-control" placeholder="Masukkan Tanggal">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                    
             </div>
         </div>
 
@@ -75,14 +71,29 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Departemen</strong>
+                <input type="text" name="no_hp" class="form-control" value="{{ $blog->departemen_id }}">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Departemen</strong>
+                <input type="text" name="no_hp" class="form-control" value="{{ $blog->bagian_id }}">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>File Pendukung</strong>
                 <input type="file" name="file_pendukung" class="form-control" placeholder="File Pendukung">
             </div>
         </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+    </div>
    
-    </form>
+</form>
 @endsection

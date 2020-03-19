@@ -18,6 +18,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Customer</a></li>
       <li><a href="#">Admin</a></li>
+      <li><a href="#">Bagian</a></li>
       <li><a href="#">Atasan 1</a></li>
       <li><a href="#">Atasan 2</a></li>
     </ul>

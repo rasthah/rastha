@@ -93,6 +93,10 @@ class BlogController extends Controller
             'tanggal' => 'required',
             'description' => 'required',
             'file_pendukung' => 'required',
+            'keterangan' => 'required',
+            'bagian_id' => 'required',
+            'departemen_id' => 'required',
+            'tanggal_kirim' => 'required',
         ]);
   
         $blog->update($request->all());
