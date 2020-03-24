@@ -29,68 +29,77 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama customer</strong>
-                {{ $blog->title }}
+                <input type="text" name="" id="" class="form-control" value="{{ $blog->title }}" disabled>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Alamat:</strong>
-                {{ $blog->alamat }}
+                <input type="text" name="" id="" class="form-control" value="{{ $blog->alamat }}" disabled>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NoTelp/HP:</strong>
-                {{ $blog->no_hp }}
+                <input type="text" name="" id="" class="form-control" value="{{ $blog->no_hp }}" disabled>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email:</strong>
-                {{ $blog->email }}
+                <input type="text" name="" id="" class="form-control" value="{{ $blog->email }}" disabled>
             </div>
         </div>
-        <div class="form-group">
-            <strong>Departemen: </strong>
-            <select name="departemen_id" id="">
-                <option value="1">Departemen 1</option>
-                <option value="2">Departemen 2</option>
-            </select>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Departemen: </strong>
+                <select name="departemen_id" id="" class="form-control" disabled>
+                    <option value="1">Departemen 1</option>
+                    <option value="2">Departemen 2</option>
+                </select>
+            </div>
         </div>
-        <div class="form-group">
-            <strong>Bagian</strong>
-            <select name="bagian_id" id="">
-                <option value="1">Bagian 1</option>
-                <option value="2">Bagian 2</option>
-            </select>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Bagian</strong>
+                <select name="bagian_id" id="" class="form-control" disabled>
+                    <option value="1">Bagian 1</option>
+                    <option value="2">Bagian 2</option>
+                </select>
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal diterima:</strong>
-                {{ $blog->tanggal }}
+                <input type="date" name="" id="" class="form-control" value="{{ $blog->tanggal }}" disabled>
             </div>
         </div>
-        <div class="form-group">
-            <strong>Tanggal: </strong>
-            <input type="date" name="tanggal" id="">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal: </strong>
+                <input type="date" name="tanggal_kirim" id="" class="form-control">
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Keluhan:</strong>
-                {{ $blog->description }}
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->description }}</textarea>
             </div>
         </div>
-        <div class="form-group">
-            <strong>Keterangan tambahan:</strong>
-            {{ $blog->keterangan }}
-                
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Keterangan tambahan:</strong>
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->keterangan }}</textarea>
+            </div>
         </div>
-        <div class="form-group">
-            <strong>Petugas</strong>
-            <select name="petugas_id" id="">
-                <option value="1">Petugas 1</option>
-                <option value="2">Petugas 2</option>
-            </select>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Petugas</strong>
+                <select name="petugas_id" id="" class="form-control">
+                    <option value="1">Petugas 1</option>
+                    <option value="2">Petugas 2</option>
+                </select>
+            </div>
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
         <input type="hidden" name="blog_id" value="{{ $blog->id }}">
