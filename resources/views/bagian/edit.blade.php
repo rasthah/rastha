@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('sendcomplaints.update',$blog->id) }}" method="POST">
+    <form action="{{ route('bagian.update',$blog->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -55,6 +55,30 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Id keluhan:</strong>
+                    <input type="text" name="" id="" class="form-control" value="{{ $blog->id }}" disabled>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Keluhan:</strong>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->description }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>File pendukung:</strong>
+                    <a href="#">Download</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Keterangan:</strong>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->keterangan }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Departemen: </strong>
                     <select name="departemen_id" id="" class="form-control" disabled>
                         <option value="1">Departemen 1</option>
@@ -72,36 +96,61 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Tanggal diterima:</strong>
-                    <input type="date" name="" id="" class="form-control" value="{{ $blog->tanggal }}" disabled>
-                </div>
-            </div>
             <div class="form-group">
-                <strong>Tanggal: </strong>
-                <input type="date" class="form-control" name="tanggal_kirim" value="{{ $blog->tanggal_kirim }}">
+                <strong>Tanggal salur:</strong>
+                <input type="date" name="" id="" class="form-control" value="{{ $blog->tanggal }}" disabled>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Keluhan:</strong>
-                    <textarea class="form-control" name="" id="" cols="30" rows="10" disabled>{{ $blog->description }}</textarea>
-                </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal Response: </strong>
+                <input type="date" name="tanggal_respon" id="" class="form-control" value="{{$blog->tanggal_respon}}">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Keterangan tambahan:</strong>
-                    <textarea class="form-control" name="keterangan" id="" cols="30" rows="10" disabled>{{ $blog->keterangan }}</textarea>
-                </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Keterangan:</strong>
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->keterangan }}</textarea>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Petugas</strong>
-                    <select name="petugas_id" id="" class="form-control">
-                        <option value="1">Petugas 1</option>
-                        <option value="2">Petugas 2</option>                    
-                    </select> 
-                </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tipe Keluhan</strong>
+                <select name="tipe_keluhan" id="" class="form-control">
+                    <option value="umum">UMUM</option>
+                </select>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Respon:</strong>
+                <textarea name="respon" id="" cols="30" rows="10" class="form-control">{{$blog->respon}}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Waktu Penanganan:</strong>
+                <input type="text" name="waktu_penanganan" id="" class="form-control" value="{{$blog->waktu_penanganan}}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Petugas respon:</strong>
+                <input type="text" name="petugas_respon" id="" class="form-control" value="{{$blog->petugas_respon}}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pengg Jawab:</strong>
+                <input type="text" name="penanggung_jawab" id="" class="form-control" value="{{$blog->penanggung_jawab}}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Mengerjakan keluhan:</strong>
+                <input type="text" name="mengerjakan_keluhan" id="" class="form-control" value="{{$blog->mengerjakan_keluhan}}">
+            </div>
+        </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>

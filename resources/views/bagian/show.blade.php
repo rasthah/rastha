@@ -23,7 +23,7 @@
     @endif
    
     <div class="row">
-    <form action="{{ route('sendcomplaints.store') }}" method="post">
+    <form action="{{ route('bagian.store') }}" method="post">
     @csrf
         <input type="hidden" name="blog_id" value="{{ $blog->id }}">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -52,6 +52,30 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Id keluhan:</strong>
+                <input type="text" name="" id="" class="form-control" value="{{ $blog->id }}" disabled>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Keluhan:</strong>
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->description }}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>File pendukung:</strong>
+                <a href="#">Download</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Keterangan:</strong>
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->keterangan }}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Departemen: </strong>
                 <select name="departemen_id" id="" class="form-control" disabled>
                     <option value="1">Departemen 1</option>
@@ -70,35 +94,52 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tanggal diterima:</strong>
+                <strong>Tanggal salur:</strong>
                 <input type="date" name="" id="" class="form-control" value="{{ $blog->tanggal }}" disabled>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tanggal: </strong>
-                <input type="date" name="tanggal_kirim" id="" class="form-control">
+                <strong>Tanggal Response: </strong>
+                <input type="date" name="tanggal_respon" id="" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Keluhan:</strong>
-                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->description }}</textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Keterangan tambahan:</strong>
-                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{ $blog->keterangan }}</textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Petugas</strong>
-                <select name="petugas_id" id="" class="form-control">
-                    <option value="1">Petugas 1</option>
-                    <option value="2">Petugas 2</option>
+                <strong>Tipe Keluhan</strong>
+                <select name="tipe_keluhan" id="" class="form-control">
+                    <option value="umum">UMUM</option>
                 </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Respon:</strong>
+                <textarea name="respon" id="" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Waktu Penanganan:</strong>
+                <input type="text" name="waktu_penanganan" id="" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Petugas respon:</strong>
+                <input type="text" name="petugas_respon" id="" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pengg Jawab:</strong>
+                <input type="text" name="penanggung_jawab" id="" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Mengerjakan keluhan:</strong>
+                <input type="text" name="mengerjakan keluhan" id="" class="form-control">
             </div>
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
