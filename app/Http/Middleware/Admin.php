@@ -18,8 +18,19 @@ class Admin
     {
         $user = Auth::user();
         if($user){
-            if($user->roles == null){
-                return redirect()->route('blogs.index');
+            switch($user->roles){
+                case null:
+                    return redirect()->route('blogs.index');
+                    break;
+                case 'admin':
+                    return redirect()->route('sendcomplaints.index');
+                    break;
+                case 'bagian':
+                    return redirect()->route('bagian.index');
+                    break;
+                case 'atasan':
+                    return redirect()->route('atasan.index');
+                    break;
             }
         }
         return $next($request);

@@ -17,10 +17,16 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Customer</a></li>
-      <li><a href="#">Admin</a></li>
-      <li><a href="#">Bagian</a></li>
-      <li><a href="#">Atasan 1</a></li>
-      <li><a href="#">Atasan 2</a></li>
+      <li><a href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+      </li>
     </ul>
   </div>
 </nav>
