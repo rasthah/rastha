@@ -1,4 +1,4 @@
-@extends('sendcomplaints.layout')
+@extends('bagian.layout')
  
 @section('content')
     <div class="row">

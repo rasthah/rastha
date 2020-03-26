@@ -7,9 +7,20 @@ use Illuminate\Http\Request;
 use App\SendComplaint;
 
 use App\Blog;
+use Illuminate\Support\Facades\Auth;
 
 class BagianController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +28,10 @@ class BagianController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(5);
+        $user = Auth::user();
+        $blogs = Blog::where('bagian_id', $user->bagian_id)
+                ->where('departemen_id', $user->departemen_id)
+                ->latest()->paginate(5);
         //$complaints = SendComplaint::latest()->paginate(5);
   
         return view('bagian.index',compact('blogs'))
