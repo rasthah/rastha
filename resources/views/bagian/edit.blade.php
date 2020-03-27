@@ -130,7 +130,10 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Waktu Penanganan:</strong>
-                <input type="text" name="waktu_penanganan" id="" class="form-control" value="{{$blog->waktu_penanganan}}">
+                <select name="waktu_penanganan" id="" class="form-control">
+                    <option value="2">2 Hari</option>
+                    <option value="3">3 Hari</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

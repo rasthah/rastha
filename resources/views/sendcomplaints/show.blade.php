@@ -101,6 +101,7 @@
                 </select>
             </div>
         </div>
+        <input type="hidden" name="status" value="1">
         <button type="submit" class="btn btn-success">Simpan</button>
     </form>
     </div>
