@@ -45,10 +45,11 @@ class BlogController extends Controller
             'email' => 'required',
             'tanggal' => 'required',
             'description' => 'required',
-            'file_pendukung' => 'required',
+            //'file_pendukung' => 'required',
         ]);
 
-        $file = $request->file('file_pendukung')->store('upload');
+        if($request->file('file_pendukung'))
+            $file = $request->file('file_pendukung')->store('upload');
   
         Blog::create($request->all());
    
@@ -94,7 +95,7 @@ class BlogController extends Controller
             'email' => 'required',
             'tanggal' => 'required',
             'description' => 'required',
-            'file_pendukung' => 'required',
+            // 'file_pendukung' => 'required',
             'keterangan' => 'required',
             'bagian_id' => 'required',
             'departemen_id' => 'required',

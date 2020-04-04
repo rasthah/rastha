@@ -1,4 +1,4 @@
-@extends('sendcomplaints.layout')
+@extends('atasan.layout')
  
 @section('content')
     <div class="row">
@@ -8,6 +8,11 @@
             </div>
         </div>
     </div>
+
+    @php
+        use Carbon\Carbon;
+        $date_now = Carbon::now();
+    @endphp
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -31,6 +36,11 @@
             <th width="250px">Action</th>
         </tr>
         @foreach ($blogs as $blog)
+        @php
+            $tgl = Carbon::create($blog->tanggal);
+            $tgl_deadline2 = $tgl->add(2, 'day');
+            $date_diff = $date_now->diffInDays($tgl_deadline2, false);
+        @endphp
         <tr>
             <td>{{ (++$i) }}</td>
             <td>{{ $blog->departemen_id }}</td>
